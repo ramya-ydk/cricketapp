@@ -1,0 +1,34 @@
+.carouseTournamentContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.carouselItem {
+    display: flex;
+    background-color: antiquewhite;
+    flex: 0.7;
+
+}
+
+.TournamentUpdates {
+    padding: 20px;
+    border: 5px solid whitesmoke;
+    border-radius: 5px;
+    flex: 0.3 1;
+    background-image: linear-gradient(180deg, #98082d, #0b0c2eb3);
+    /* background-image: linear-gradient(180deg, #947d96, #bb00ffb3); */
+    /* box-shadow: 3px 3px rgb(78 72 72), -1em 0 0.4em olive; */
+
+
+
+
+
+
+}
+
+@media only screen and (max-width: 600px) {
+    .carouseTournamentContainer {
+        display: flex;
+        flex-direction: column;
+    }
+}

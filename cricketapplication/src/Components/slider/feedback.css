@@ -1,0 +1,19 @@
+.feedbackContent.description {
+    scrollbar-width: thin;
+    height: 6px;
+    width: 8px;
+    background: rgb(200, 58, 58);
+    border-radius: 5px;
+
+}
+
+
+.feedbackContent > *::-webkit-scrollbar {
+    height: 6px;
+    width: 6px !important;
+    /* background-color: lightgray; */
+  }
+.feedbackContent .description {
+    scrollbar-width: thin;
+}
+
