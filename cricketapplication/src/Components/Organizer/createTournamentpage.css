@@ -1,0 +1,76 @@
+.RegisterContainer {
+    height: 100vh;
+    width: auto;
+    display: flex;
+    position: relative;
+    background-image: url("https://wallpaperaccess.com/full/1088580.jpg");
+
+    /* "https://wallpaperaccess.com/full/1612981.jpg"); */
+    /* "https://cdn.wallpapersafari.com/99/24/NYQ5bq.jpg"); */
+    background-size: 100em;
+}
+
+.Logo {
+    position: absolute;
+    max-width: 200px;
+    max-height: 150px;
+    top: 2%;
+    left: 2%;
+}
+
+.img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.RegisterForm {
+    display: flex;
+    padding: 35px;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    background: ghostwhite;
+    box-shadow: rgba(0, 0, 0, 50%) 0px 2px 7px 2px;
+    margin: auto;
+    border-radius: 8px;
+    max-height: 650px;
+}
+
+.RegisterTitle {
+    font-size: 30px;
+    color: darkslategray;
+    text-shadow: red 1.5px 0px, cyan -2.5px 0px;
+    text-transform: lowercase;
+    margin: 5px 0px 25px 0px;
+    cursor: default;
+}
+
+.RegisterSubmit {
+    border-radius: 6px;
+    background: gainsboro;
+    box-shadow: rgb(0, 0, 0, 0.2) 0 2px 4px;
+    color: black;
+    cursor: pointer;
+    line-height: 40px;
+    margin-top: 5%;
+    width: 50%;
+    border: none;
+}
+
+.RegisterSubmit:hover {
+    background: gainsboro;
+    color: black;
+    box-shadow: black 0 2px 4px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.FetchedMsg {
+    font-size: 15px;
+    margin: 25px 0px -5px 0px;
+}
+
+.ForgotPW {
+    margin-top: 20px;
+    text-decoration: none;
+    color: #4646ff;
+}

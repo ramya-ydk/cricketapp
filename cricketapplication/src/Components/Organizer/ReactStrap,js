@@ -1,0 +1,37 @@
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Nav, NavItem, NavLink } from "reactstrap";
+
+function ReactApp() {
+  return (
+    <div
+      style={{
+        display: "block",
+        width: 700,
+        padding: 30,
+      }}
+    >
+      <h4>ReactJS Reactstrap Nav Component</h4>
+      <Nav vertical>
+        <NavItem>
+          <NavLink href="#" active>
+            Dashboard
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="#">Login</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="#">Signup</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink disabled href="#">
+            About us
+          </NavLink>
+        </NavItem>
+      </Nav>
+    </div>
+  );
+}
+
+export default ReactApp;

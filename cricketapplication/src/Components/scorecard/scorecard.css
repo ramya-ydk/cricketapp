@@ -1,0 +1,30 @@
+.scorecardContainer {
+    width: 60%;
+    margin: auto;
+    background-color: #cdcde0;
+}
+
+.scorecardHeading {
+    background-color: darkblue;
+    height: 50%;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: larger;
+}
+
+/* 
+.tossWinner {
+    border: 3px solid rgb(197, 197, 209);
+    background-image: linear-gradient(to bottom right, red, yellow);
+    ;
+} */
+
+@media screen and (max-width:960px) {
+    .scorecardContainer {
+        width: 100%;
+        margin: auto;
+        background-color: #cdcde0;
+    }
+}

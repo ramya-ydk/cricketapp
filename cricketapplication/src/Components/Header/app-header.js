@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 //import search from "./searchIcon.png";
 import ydk from "./ydk.svg";
+import { useNavigate } from "react-router-dom";
 // import logo from "./logo.png";
 import "./app-header.css";
 import { ProfileDropdownItems } from "./profileHeader.js";
@@ -38,6 +39,7 @@ const useWindowSize = () => {
 const AppHeader1 = ({ menuItems }) => {
   const [checked, setChecked] = useState(false);
   const [windowWidth, windowHeight] = useWindowSize();
+  const nav = useNavigate();
   useEffect(() => {
     let header = document.getElementsByTagName("header")[0];
     document.addEventListener("scroll", () => {
@@ -48,6 +50,7 @@ const AppHeader1 = ({ menuItems }) => {
       }
     });
   }, []);
+
   return (
     <>
       {/* <div className={checked ? "bg" : "bgw"}> */}
@@ -120,6 +123,19 @@ const AppHeader1 = ({ menuItems }) => {
           </div>
           //  </nav>
         )}
+        <div>
+          <button
+            style={{
+              height: "40px",
+              Width: "30px",
+              margin: "20px",
+              borderRadius: "4px",
+            }}
+            onClick={() => nav("/login")}
+          >
+            SignUp
+          </button>
+        </div>
         {/* <div className="sideIcons"> */}
         <div className={"searchDiv"}>
           <input className="SearchBox" placeholder="Search" type="text" />

@@ -6,74 +6,46 @@ import "slick-carousel/slick/slick-theme.css";
 import "./feedback.css";
 import SingleCard from "../card/card";
 import { Card } from "reactstrap";
+import TournamentDisplayCard from "../card/tournamentDisplayCard";
 
 export const CardData = [
   {
-    name: "Nithila",
-    degree: "3rd B.sc",
-    college: "psgcas",
-    feedBackId: 1,
-    content:
-      "I have got placed in Accenture, one of my dream companies. The reason I chose this platform was – it was simple and subscribing and taking tests was easier compared to other platforms ",
-    rating: "5",
-    img: "",
+    image: "https://drop.ndtv.com/homepage/ndtv_sports/images/ipl.png",
+    tournamentName: "Kovai Plays",
+    venue: "Perks Ground",
+    startDate: "11/30/2022",
+    endDate: "11/30/2022",
   },
   {
-    name: "Sammer",
-    degree: "B.E CS",
-    college: "Hicas",
-    feedBackId: 2,
-    content:
-      "Gaining confidence is more important for placements. I am happy that I chose ‘Test Your Metrics’ for my preparation. I got placed in my first interview.",
-    rating: "4",
+    image: "https://drop.ndtv.com/homepage/ndtv_sports/images/ipl.png",
+    tournamentName: "Kovai Plays",
+    venue: "Perks Ground",
+    startDate: "11/30/2022",
+    endDate: "11/30/2022",
   },
   {
-    name: "Ashwini",
-    degree: "M.com",
-    college: "ngp",
-    feedBackId: 3,
-    content:
-      "I am placed in 3 companies; I took about 7 tests. Each test improved me to perform better than before. I have also suggested my junior to take up Test Your Metrics for their preparation",
-    rating: "3",
+    image: "https://drop.ndtv.com/homepage/ndtv_sports/images/ipl.png",
+    tournamentName: "Kovai Plays",
+    venue: "Perks Ground",
+    startDate: "11/30/2022",
+    endDate: "12/1/2022",
   },
   {
-    name: "Nivedha",
-    degree: "B.sc CS",
-    college: " psg krishnamal",
-    feedBackId: 4,
-    content:
-      "I got placed in TCS & CTS. My batch was little nervous about online tests. That’s where I chose this platform. It was very simple to use, there were 9 practice tests. Each paper helped me improve my time management.",
-    rating: "4",
-  },
-  {
-    name: "Vijayalakshmi",
-    degree: "B.sc CS",
-    college: "psgcas",
-    feedBackId: 5,
-    content:
-      "I am so so thankful to this platform Deloite was my dream company and I am placed in it now. Would be joining soon. Appearing for Deloite aptitude was easier only because I have taken ample tests and practiced. I wholeheartedly thank the entire team of Test Your Metrics ",
-    rating: "5",
-  },
-  {
-    name: "Kannan",
-    degree: "B.Com",
-    college: "psgcas",
-    feedBackId: 6,
-    content:
-      "This practice test has given me more insights about my aptitude skill. How efficiently I should manage my timing and so on. I have improved myself after 6 tests. A non-maths student cracking aptitude wouldn’t have been easy without  this site. I am placed with Infosys and HCL.",
-    rating: "4",
+    image: "https://drop.ndtv.com/homepage/ndtv_sports/images/ipl.png",
+    tournamentName: "Kovai Plays",
+    venue: "Perks Ground",
+    startDate: "11/30/2022",
+    endDate: "11/30/2022",
   },
 ];
 
 export const Testimonial = () => {
   const [settings, setSettings] = useState({
-    //
-
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 960,
@@ -133,45 +105,13 @@ export const Testimonial = () => {
                       <div className="testimonial-card-box">
                         <div className="inner">
                           <div className="client-info">
-                            <div className="thumbnail"></div>
-                            <div className="content">
-                              <SingleCard />
-
-                              {/* <div>Title</div> */}
-                              {/* <h6 className="title">{item.name}</h6>
-                              <span className="designation">{item.degree}</span> */}
+                            <div className="thumbnail">
+                              <div className="content">
+                                {/* <SingleCard /> */}
+                                <TournamentDisplayCard props={item} />
+                              </div>
                             </div>
                           </div>
-                          {/* <div className="feedbackContent">
-                            <p
-                              className="description"
-                              style={{
-                                minHeight: 200,
-                                maxHeight: 200,
-                                overflowY: "scroll",
-                                backgroundColor: "white",
-                                color: "black",
-                                fontFamily: "cursive",
-                                fontSize: "smaller",
-                                margin: "20px",
-                              }}
-                            >
-                              {item.content}
-                              <img src={item.img} />
-                            </p>
-                          </div>
-                          <div className="rating">
-                            {Array.from({ length: Math.ceil(item.rating) }).map(
-                              (star, index) => (
-                                <i className="on icon-Star" key={index}></i>
-                              )
-                            )}
-                            {Array.from({
-                              length: 5 - Math.floor(item.rating),
-                            }).map((offStar, index) => (
-                              <i className="off icon-Star" key={index}></i>
-                            ))}
-                          </div> */}
                         </div>
                       </div>
                     </Slider>
@@ -182,17 +122,6 @@ export const Testimonial = () => {
           </div>
         </div>
       </div>
-
-      {/* <div className="rn-progress-parent">
-        <svg
-          className="rn-back-circle svg-inner"
-          width="100%"
-          height="100%"
-          viewBox="-1 -1 102 102"
-        >
-          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"  />
-        </svg>
-      </div> */}
     </>
   );
 };
