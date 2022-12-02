@@ -34,7 +34,7 @@ function Homepage() {
             fontSize: "25px",
             fontWeight: 50,
             textAlign: "center",
-            border: "50px solid firebrick",
+            border: "5px solid  #e6dcdc",
             width: "100%",
             // border: "2px solid red",
             // borderRadius: "6px",

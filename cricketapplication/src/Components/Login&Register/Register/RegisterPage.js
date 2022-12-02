@@ -26,7 +26,8 @@ const RegisterPage = ({ UpdateDetails }) => {
     "email",
     "phoneNumber",
     "password",
-    "role",
+    // "role",
+    "profileImage",
   ];
   const [registerData, setRegisterData] = useState({
     name: {
@@ -74,18 +75,24 @@ const RegisterPage = ({ UpdateDetails }) => {
       errorMsg: "Minimum 6 - 12 values required",
       required: true,
     },
-    role: {
-      type: "select",
-      value: "",
-      label: "Select Role",
+    // role: {
+    //   type: "select",
+    //   value: "",
+    //   label: "Select Role",
+    //   error: false,
+    //   errorMsg: "Must select an option",
+    //   required: true,
+    //   options: [
+    //     { label: "Organiser", value: "Organiser" },
+    //     { label: "Teams", value: "Teams" },
+    //     { label: "Player", value: "Player" },
+    //   ],
+    // },
+    profileImage: {
+      type: "file",
+      label: "Upload-Image",
       error: false,
-      errorMsg: "Must select an option",
-      required: true,
-      options: [
-        { label: "Organiser", value: "Organiser" },
-        { label: "Teams", value: "Teams" },
-        { label: "Player", value: "Player" },
-      ],
+      required: false,
     },
   });
 
@@ -99,7 +106,7 @@ const RegisterPage = ({ UpdateDetails }) => {
     setDisplayedResp({ message: "", resp: "" });
     let registerDetails = Object.assign(registerData);
     let result = {};
-
+    const formData = new FormData();
     for (let keys in registerDetails) {
       let validation = validate(registerDetails[keys]);
       registerDetails = update(registerDetails, {
@@ -121,7 +128,12 @@ const RegisterPage = ({ UpdateDetails }) => {
     if (isError) {
       console.log(result);
     } else {
-      SubmitData(result);
+      Object.entries(result).map(([key, value]) => formData.append(key, value));
+      console.log(formData, "formData");
+      for (const pair of formData.entries()) {
+        console.log(`${pair[0]}, ${pair[1]}`);
+      }
+      //  SubmitData(formData);
       console.log(result);
     }
     setRegisterData(registerDetails);
@@ -217,7 +229,7 @@ const RegisterPage = ({ UpdateDetails }) => {
         title="Back to Home"
         style={{ color: "white", margin: "40px", fontSize: "medium" }}
       >
-        <i className="fa fa-home" onClick={() => history("/homepage")} />
+        <i className="fa fa-home" onClick={() => history("/")} />
       </div>
     </div>
   );

@@ -8,45 +8,45 @@ const TournamentDisplayCard = ({ props }) => {
     <>
       <style jsx="true">
         {`
-          .container {
+          .containerTDC {
             padding: 0px;
-            // width: 100%;
+            width: 70%;
             color: crimson;
             box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
               rgba(0, 0, 0, 0.05) 0px 5px 10px;
             cursor: pointer;
-            margin-top: 20px;
             border: none;
             border-radius: 10px;
+            margin: 50px;
           }
-          .cardContentBody {
+          .cardContentBodyTDC {
             padding: 10px;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
           }
-          .cardContentBody:hover {
+          .cardContentBodyTDC:hover {
             background-color: #dee2e636;
           }
-          .sideHeading {
+          .sideHeadingTDC {
             font-size: 13px;
             text-transform: uppercase;
             line-height: 1.1em;
             color: brown;
           }
-          .content {
+          .contentTDC {
             color: darkblue;
             font-size: 13px;
             margin-left: 5px;
             line-height: 1.1em;
             word-break: break-all;
           }
-          .title {
+          .titleTDC {
             font-weight: 400;
             font-size: 20px;
             text-transform: uppercase;
-            // word-wrap: break-word;
+            word-wrap: break-word;
           }
-          .Image {
+          .ImageTDC {
             width: 100%;
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
@@ -64,19 +64,21 @@ const TournamentDisplayCard = ({ props }) => {
           }
         `}
       </style>
-      <Card className="container">
+      <Card className="containerTDC">
         <div className="img-hover-zoom">
           <img
             alt="Card cap"
             src={image || "https://picsum.photos/318/180"}
-            className="Image"
+            className="ImageTDC"
           />
 
-          <CardBody className="cardContentBody">
-            <CardTitle className="title">{tournamentName || "---"}</CardTitle>
+          <CardBody className="cardContentBodyTDC">
+            <CardTitle className="titleTDC">
+              {tournamentName || "---"}
+            </CardTitle>
             <div style={{ display: "flex" }}>
-              <CardText className="sideHeading">Start Date:</CardText>
-              <CardText className="content">
+              <CardText className="sideHeadingTDC">Start Date:</CardText>
+              <CardText className="contentTDC">
                 {startDate || "---"}
                 {new Date().toLocaleDateString() >= startDate &&
                 new Date().toLocaleDateString() <= endDate ? (
@@ -87,8 +89,8 @@ const TournamentDisplayCard = ({ props }) => {
               </CardText>
             </div>
             <div style={{ display: "flex" }}>
-              <CardText className="sideHeading">Venue:</CardText>
-              <CardText className="content">{venue || "---"}</CardText>
+              <CardText className="sideHeadingTDC">Venue:</CardText>
+              <CardText className="contentTDC">{venue || "---"}</CardText>
             </div>
             <div>
               <Button outline>

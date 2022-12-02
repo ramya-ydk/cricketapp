@@ -155,7 +155,7 @@ export const menuItems = [
   },
 
   {
-    title: "contact Us",
+    title: "Contact Us",
     href: "./service page",
     className: "items",
     subMenuClass: "dropdown",

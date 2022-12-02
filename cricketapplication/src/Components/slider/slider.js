@@ -14,7 +14,7 @@ export const CardData = [
     tournamentName: "Kovai Plays",
     venue: "Perks Ground",
     startDate: "11/30/2022",
-    endDate: "11/30/2022",
+    endDate: "12/6/2022",
   },
   {
     image: "https://drop.ndtv.com/homepage/ndtv_sports/images/ipl.png",
@@ -107,8 +107,9 @@ export const Testimonial = () => {
                           <div className="client-info">
                             <div className="thumbnail">
                               <div className="content">
-                                {/* <SingleCard /> */}
-                                <TournamentDisplayCard props={item} />
+                                <div>
+                                  <TournamentDisplayCard props={item} />
+                                </div>
                               </div>
                             </div>
                           </div>

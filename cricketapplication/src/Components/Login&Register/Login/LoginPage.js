@@ -189,7 +189,7 @@ const LoginPage = ({ UpdateDetails }) => {
         title="Back to Home"
         style={{ color: "white", margin: "40px", fontSize: "medium" }}
       >
-        <i className="fa fa-home" onClick={() => history("/homepage")} />
+        <i className="fa fa-home" onClick={() => history("/")} />
       </div>
     </div>
   );
