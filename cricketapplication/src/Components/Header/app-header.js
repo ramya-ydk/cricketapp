@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 // import logo from "./logo.png";
 import "./app-header.css";
 import { ProfileDropdownItems } from "./profileHeader.js";
-
+import { Button } from "reactstrap";
 export const HeaderComponent = {
   Logo: {
     name: "logo",
@@ -124,17 +124,15 @@ const AppHeader1 = ({ menuItems }) => {
           //  </nav>
         )}
         <div>
-          <button
+          <Button
             style={{
-              height: "40px",
-              Width: "30px",
-              margin: "20px",
-              borderRadius: "4px",
+              marginTop: "20px",
             }}
-            onClick={() => nav("/login")}
+            color="primary"
+            onClick={() => nav("/newRegister")}
           >
             SignUp
-          </button>
+          </Button>
         </div>
         {/* <div className="sideIcons"> */}
         <div className={"searchDiv"}>

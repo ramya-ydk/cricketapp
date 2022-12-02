@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Styles from "./Component.module.css";
-
+import { Button } from "reactstrap";
 export const validate = (element) => {
   // returns true when it's error
   if (element["required"]) {
-    if (element["type"] === "text" || element["type"] === "password" || element["type"] === "number") {
-      return element["value"].length < element.pattern.min || element["value"].length > element.pattern.max;
+    if (
+      element["type"] === "text" ||
+      element["type"] === "password" ||
+      element["type"] === "number"
+    ) {
+      return (
+        element["value"].length < element.pattern.min ||
+        element["value"].length > element.pattern.max
+      );
     } else if (element["type"] === "email") {
       return !element.pattern.regEx.test(element["value"]);
     } else if (element["type"] === "select") {
@@ -16,11 +23,26 @@ export const validate = (element) => {
   }
 };
 
-export const FormInputs = ({ inputType, values, required, label, handleChange, options, error, errorMsg }) => {
+export const FormInputs = ({
+  inputType,
+  values,
+  required,
+  label,
+  handleChange,
+  options,
+  error,
+  errorMsg,
+}) => {
   const [passwordState, setPasswordState] = useState("password");
 
+  const ref = useRef(null);
+  const profileImg = () => {
+    ref.current.click();
+  };
   const pwToggle = () => {
-    passwordState === "password" ? setPasswordState("text") : setPasswordState("password");
+    passwordState === "password"
+      ? setPasswordState("text")
+      : setPasswordState("password");
   };
 
   const myTimeout = setTimeout(pwToggle, 3000);
@@ -46,7 +68,10 @@ export const FormInputs = ({ inputType, values, required, label, handleChange, o
                 handleChange(e.target.value);
               }}
             />
-            <div className={Styles.ErrorMsg} style={{ display: error === false ? "none" : "block" }}>
+            <div
+              className={Styles.ErrorMsg}
+              style={{ display: error === false ? "none" : "block" }}
+            >
               {error ? errorMsg : ""}
             </div>
           </>
@@ -68,7 +93,10 @@ export const FormInputs = ({ inputType, values, required, label, handleChange, o
                 handleChange(e.target.value);
               }}
             />
-            <div className={Styles.ErrorMsg} style={{ display: error === false ? "none" : "block" }}>
+            <div
+              className={Styles.ErrorMsg}
+              style={{ display: error === false ? "none" : "block" }}
+            >
               {error ? errorMsg : ""}
             </div>
           </>
@@ -90,7 +118,10 @@ export const FormInputs = ({ inputType, values, required, label, handleChange, o
                 handleChange(target.value);
               }}
             />
-            <div className={Styles.ErrorMsg} style={{ display: error === false ? "none" : "block" }}>
+            <div
+              className={Styles.ErrorMsg}
+              style={{ display: error === false ? "none" : "block" }}
+            >
               {error ? errorMsg : ""}
             </div>
           </>
@@ -114,7 +145,11 @@ export const FormInputs = ({ inputType, values, required, label, handleChange, o
                 }}
               />
               <i
-                className={`${Styles.eyeSlash} ${passwordState === "password" ? " fa fa-eye " : " fa fa-eye-slash "}`}
+                className={`${Styles.eyeSlash} ${
+                  passwordState === "password"
+                    ? " fa fa-eye "
+                    : " fa fa-eye-slash "
+                }`}
                 style={{
                   color: passwordState === "password" ? "darkgrey" : "#005CC8",
                   fontWeight: "bold",
@@ -125,7 +160,10 @@ export const FormInputs = ({ inputType, values, required, label, handleChange, o
                 }}
               ></i>
             </div>
-            <div className={Styles.ErrorMsg} style={{ display: error === false ? "none" : "block" }}>
+            <div
+              className={Styles.ErrorMsg}
+              style={{ display: error === false ? "none" : "block" }}
+            >
               {error ? errorMsg : ""}
             </div>
           </>
@@ -151,14 +189,43 @@ export const FormInputs = ({ inputType, values, required, label, handleChange, o
               </option>
               {options.map((item, ind) => {
                 return (
-                  <option key={ind} className={Styles.selectionOptions} value={item.value}>
+                  <option
+                    key={ind}
+                    className={Styles.selectionOptions}
+                    value={item.value}
+                  >
                     {item.label}
                   </option>
                 );
               })}
             </select>
-            <div className={Styles.ErrorMsg} style={{ display: error === false ? "none" : "block" }}>
+            <div
+              className={Styles.ErrorMsg}
+              style={{ display: error === false ? "none" : "block" }}
+            >
               {error ? errorMsg : ""}
+            </div>
+          </>
+        );
+      case "file":
+        return (
+          <>
+            <div>
+              <input
+                type={inputType}
+                style={{ display: "none" }}
+                required={required}
+                ref={ref}
+                onChange={(e) => {
+                  handleChange(e.target.value);
+                }}
+              />
+
+              <div>
+                <Button color="primary" onClick={profileImg}>
+                  Upload Profile Photo
+                </Button>
+              </div>
             </div>
           </>
         );
